@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f1e8" />
+    <title>Sproutcode | Learn gently, make boldly</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#top" aria-label="Sproutcode home"><span class="brand-mark">✳</span><span>sproutcode</span></a>
+        <p class="side-note">tiny steps<br /><strong>big ideas</strong></p>
+        <nav class="nav-list" aria-label="Main navigation">
+          <button class="nav-item active" data-view="learn"><span>◒</span> Learn</button>
+          <button class="nav-item" data-view="path"><span>⌁</span> My path</button>
+          <button class="nav-item" data-view="notes"><span>▱</span> Notes</button>
+        </nav>
+        <div class="sidebar-sticker">you can<br /><span>do this!</span> ♡</div>
+        <button class="profile-chip" id="profileButton"><span class="avatar" id="avatar">S</span><span><strong id="profileName">Student</strong><small>view profile</small></span><span>•••</span></button>
+      </aside>
+
+      <main class="main-content" id="top">
+        <header class="topbar"><button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button><span class="crumb">Learn / <strong>Python from zero</strong></span><div class="top-actions"><button class="icon-button" id="themeButton" title="Switch mood">☼</button><button class="help-button" id="helpButton">Need a nudge?</button></div></header>
+        <section class="welcome-row">
+          <div><p class="eyebrow">FRIDAY, SEPTEMBER 25</p><h1>Good morning, <span id="welcomeName">friend</span> <span class="wave">✦</span></h1><p class="intro">Let’s make something click today. No rush, no jargon.</p></div>
+          <div class="streak"><span class="flame">♨</span><strong id="streakValue">0 day streak</strong><small>keep your little spark going</small></div>
+        </section>
+
+        <section class="progress-card paper-card"><div class="progress-copy"><p class="eyebrow">YOUR GROWING GARDEN</p><h2>Python basics</h2><p>From “what is code?” to making your first tiny program.</p></div><div class="progress-ring"><span id="progressPercent">0%</span><small>grown</small></div></section>
+
+        <section class="workspace-grid">
+          <div class="lessons-panel">
+            <div class="section-heading"><div><p class="eyebrow">YOUR NOTEBOOK</p><h2>Pick a page to explore</h2></div><span class="hand-note">start small →</span></div>
+            <div class="lesson-stack" id="lessonList"></div>
+            <div class="language-strip"><span class="language-label">More gardens, soon</span><button class="language-pill">JS <small>sprouting</small></button><button class="language-pill">HTML <small>sprouting</small></button><button class="language-pill">SQL <small>sprouting</small></button></div>
+          </div>
+          <section class="tutor-card" aria-label="Sprout chatbot">
+            <div class="tutor-header"><div class="tutor-avatar">✿</div><div><p class="eyebrow">YOUR PATIENT PAL</p><h2>Sprout <span>is here</span></h2></div><button class="ai-toggle" id="aiToggle" title="Connect Groq AI">local mode</button><span class="online-dot" title="Online"></span></div>
+            <div class="chat-log" id="chatLog"><div class="chat-bubble tutor-bubble">Hi! I’m Sprout. Ask me anything, even “what is a variable?” I’ll explain it like we’re sorting buttons by color. 🌱</div><div class="chat-bubble tutor-bubble">We can take this one tiny bite at a time.</div></div>
+            <form class="chat-form" id="chatForm"><input id="chatInput" type="text" autocomplete="off" placeholder="Ask Sprout a question..." aria-label="Ask Sprout a question" /><button type="submit" aria-label="Send question">↗</button></form>
+            <div class="suggestions"><button data-prompt="What is Python?">What is Python?</button><button data-prompt="Explain variables">Explain variables</button><button data-prompt="I feel stuck">I feel stuck</button></div>
+          </section>
+        </section>
+
+        <section class="assignment-card paper-card" id="assignmentCard"><div class="assignment-icon">✎</div><div><p class="eyebrow">PRACTICE MAKES PATHS</p><h2 id="assignmentTitle">Your first tiny assignment</h2><p id="assignmentText">Finish a lesson to unlock a friendly quiz. You don’t need to be perfect; you just need to try.</p></div><button class="primary-button" id="assignmentButton">See assignment <span>→</span></button></section>
+        <footer><span>made for curious beginners</span><span>✳</span><span>your progress lives on this device</span></footer>
+      </main>
+    </div>
+
+    <div class="auth-overlay" id="authOverlay"><div class="auth-card"><div class="auth-scribble">✳</div><p class="eyebrow">A SOFT PLACE TO START</p><h1>Welcome to<br /><em>sproutcode</em></h1><p>Learn one brave little concept at a time.</p><form id="authForm"><label>Your name<input id="authName" required placeholder="e.g. Asha" /></label><label>Email<input id="authEmail" type="email" required placeholder="you@example.com" /></label><label>Password<input id="authPassword" type="password" minlength="4" required placeholder="4+ characters" /></label><button class="primary-button" type="submit"><span id="authSubmitText">Start learning</span> <span>→</span></button></form><button class="auth-toggle" id="authToggle">Already have an account? <strong>Sign in</strong></button><p class="auth-error" id="authError"></p></div></div>
+
+    <div class="modal-backdrop hidden" id="quizModal"><section class="quiz-modal"><button class="close-modal" id="closeQuiz">×</button><p class="eyebrow">TINY CHECKPOINT</p><h2 id="quizTitle">Ready for a little win?</h2><p id="quizPrompt">Which line would show a message on the screen in Python?</p><div class="quiz-options" id="quizOptions"></div><div class="quiz-result" id="quizResult"></div></section></div>
+    <script src="app.js"></script>
+  </body>
+</html>
